@@ -55,7 +55,7 @@ Après l'enregistrement de ces paramètres, on  vérifie le fonctionnement prév
 Pour notre cas, le modèle va prendre 17 kb de la mémoire et va s'exécuter dans 177ms. Ceci est négligeable puisque la carte contient 256kb de RAM. Et même l'exécution est considérée rapide. Ces résultats varient selon la quantité des données.
 ![](On-device performance.png)
 On génère ensuite les features de notre base de données et on visualise la data en 3D pour vérifier que les données sont bien séparées ou bien s'il y a des problèmes à corriger.
-![](problems detection.png)
+![](problems.png)
 On peut détecter les problèmes de classification et les corriger en les supprimant ou bien en changeant le label. 
 
 On passe ensuite au classifier, où on va entraîner le modèle à distinguer entre les différentes classes. J'ai laissé les paramètres par défaut.
