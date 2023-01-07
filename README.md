@@ -24,6 +24,7 @@ Le MP34DT05 est un microphone MEMS numérique omnidirectionnel ultra-compact à 
 
 #### 1-2- Software
 Edge Impulse c'est un site qui permet de faire l'acquisition des données qui serviront à entrainer une IA. L'acquisition peut être faite à l'aide des capteurs du capteur ou bien par plusieurs autres alternatives.En proposant, une approche simplifiée de l'intelligence artificielle à l'aide des blocs, il permet d'entrainer le modèle avec la possibilité de personnaliser les paramètres. Ensuite, il fournit le code à implanter dans le microcontrôleur afin d'utiliser le réseau entrainé ous peuvent avoir plus d'informations en cliquant sur l'image suivante:
+
 [![N|Solid](https://assets-global.website-files.com/618cdeef45d18e4ef2fd85f3/62a1c81b2a02f90fe58a0ad6_Group%20316.svg)](https://www.edgeimpulse.com/) 
 
 Bien évidemment , on utilise l'IDE de la carte Arduino pour la programmation de la carte et pour utiliser le modèle entrainé. Vous pouvez avoir plus d'informations en cliquant sur l'image suivante:
@@ -38,7 +39,9 @@ Il faut créer un compte Edge impulse et connecter la carte en utilisant cette [
 edge-impulse-daemon
 ```
 Ceci va nous permettre de connecter la carte directement au compte Edge Impulse en écrivant juste l'adresse et le mot de passe. Par la suite, la carte sera visible sur le tableau de bord d'Edge Impulse.
+
 ![](device.png)
+
 #### 2-1-2- Enregistrer les mots
 Une fois la carte est connecter au tableau de bord d'e 'Edge Impulse, il devient possible d'utiliser le MP34DT05 pour enregistrer les mots " résistance" , "transistor", "FPGA"," microcontrôleur". On donne à chaque catégorie le label correspondant. 
 Il s'est avéré que changer la voix ou d'enregistrer les mots à l'aide de plusieurs personnes peut aboutir à une base donnée plus performante. J'ai choisi d'enregistrer 10 mots sur 10s en fixant le **sampling length** à 10s.Puis, j'ai divisé les morceaux sur 10 pour obtenir un mot à chaque 1s d'audio. La quantité de data qui peut-être capturée d'un seul coup varie selon la carte utilisée. La mémoire de notre carte Arduino Nano 33 BLE Sense nous permet d'enregistrer 16s en un chaque essai. 
@@ -55,19 +58,25 @@ Après l'enregistrement de ces paramètres, on  vérifie le fonctionnement prév
 Pour notre cas, le modèle va prendre 17 kb de la mémoire et va s'exécuter dans 177ms. Ceci est négligeable puisque la carte contient 256kb de RAM. Et même l'exécution est considérée rapide. Ces résultats varient selon la quantité des données.
 ![](On-device performance.png)
 On génère ensuite les features de notre base de données et on visualise la data en 3D pour vérifier que les données sont bien séparées ou bien s'il y a des problèmes à corriger.
+
 ![](problems.png)
+
 On peut détecter les problèmes de classification et les corriger en les supprimant ou bien en changeant le label. 
 
 On passe ensuite au classifier, où on va entraîner le modèle à distinguer entre les différentes classes. J'ai laissé les paramètres par défaut.
+
 ![](results.png)
 
 Une fois le modèle testé et corrigé, on passe au déploiement. On télécharge le projet sous forme de bibliothèques Arduino en ajoutant ou désactivant l'optimisation.
+
 ![](build.png)
 
 ### 2-3- Allumer La LED L graduellement
  Puis, on l'ajoute dans l'IDE et on ouvre le sketch *nano_ble33_sense_microphone_continuous* afin de tester notre modèle avant d'ajouter la partie de la LED. 
 Une fois le programme fonctionne et donne les probabilités comme suit: 
-![](without Led.png)
+
+![](without_Led.png)
+
 En respectant l'énoncé, j'ai graduellement clignoté le LED pour un seul mot particulier " transistor" en utilisant le code suivant;
 ```sh
    if(result.classification[4].value > 0.7) {
