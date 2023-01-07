@@ -28,6 +28,7 @@ Edge Impulse c'est un site qui permet de faire l'acquisition des données qui se
 [![N|Solid](https://assets-global.website-files.com/618cdeef45d18e4ef2fd85f3/62a1c81b2a02f90fe58a0ad6_Group%20316.svg)](https://www.edgeimpulse.com/) 
 
 Bien évidemment , on utilise l'IDE de la carte Arduino pour la programmation de la carte et pour utiliser le modèle entrainé. Vous pouvez avoir plus d'informations en cliquant sur l'image suivante:
+
 [![N|Solid](https://www.1min30.com/wp-content/uploads/2018/12/Logo-Arduino-1.jpg)](https://www.arduino.cc/)
 
 ## 2- Les étapes : 
