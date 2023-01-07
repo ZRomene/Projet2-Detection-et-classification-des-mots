@@ -12,7 +12,9 @@ Le processeur est caractérisé par :
 * 1 MB Flash + 256 KB RAM
 
 Ce qui nous intéresse dans ce projet c'est le microphone. Le microphone de notre carte est le MP34DT05. Commen mentionné dans son [datasheet][df1] , le MP34DT05 permet de détecter et d'analyser le son en temps réel et peut être utilisé pour créer une interface vocale.
+
 ![](MP34DT05.png)
+
 Le MP34DT05 est un microphone MEMS numérique omnidirectionnel ultra-compact à faible consommation avec une interface IC.
 - Rapport signal/bruit : 64 dB
 - Sensibilité : -26dBFS ±3dB (capable de détecter les ondes acoustiques ) 
