@@ -38,7 +38,7 @@ Il faut créer un compte Edge impulse et connecter la carte en utilisant cette [
 edge-impulse-daemon
 ```
 Ceci va nous permettre de connecter la carte directement au compte Edge Impulse en écrivant juste l'adresse et le mot de passe. Par la suite, la carte sera visible sur le tableau de bord d'Edge Impulse.
-![](device connected.png)
+![](device.png)
 #### 2-1-2- Enregistrer les mots
 Une fois la carte est connecter au tableau de bord d'e 'Edge Impulse, il devient possible d'utiliser le MP34DT05 pour enregistrer les mots " résistance" , "transistor", "FPGA"," microcontrôleur". On donne à chaque catégorie le label correspondant. 
 Il s'est avéré que changer la voix ou d'enregistrer les mots à l'aide de plusieurs personnes peut aboutir à une base donnée plus performante. J'ai choisi d'enregistrer 10 mots sur 10s en fixant le **sampling length** à 10s.Puis, j'ai divisé les morceaux sur 10 pour obtenir un mot à chaque 1s d'audio. La quantité de data qui peut-être capturée d'un seul coup varie selon la carte utilisée. La mémoire de notre carte Arduino Nano 33 BLE Sense nous permet d'enregistrer 16s en un chaque essai. 
