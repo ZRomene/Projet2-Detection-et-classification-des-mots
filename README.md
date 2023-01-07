@@ -47,7 +47,9 @@ Ceci va nous permettre de connecter la carte directement au compte Edge Impulse 
 Une fois la carte est connecter au tableau de bord d'e 'Edge Impulse, il devient possible d'utiliser le MP34DT05 pour enregistrer les mots " résistance" , "transistor", "FPGA"," microcontrôleur". On donne à chaque catégorie le label correspondant. 
 Il s'est avéré que changer la voix ou d'enregistrer les mots à l'aide de plusieurs personnes peut aboutir à une base donnée plus performante. J'ai choisi d'enregistrer 10 mots sur 10s en fixant le **sampling length** à 10s.Puis, j'ai divisé les morceaux sur 10 pour obtenir un mot à chaque 1s d'audio. La quantité de data qui peut-être capturée d'un seul coup varie selon la carte utilisée. La mémoire de notre carte Arduino Nano 33 BLE Sense nous permet d'enregistrer 16s en un chaque essai. 
 Pour rendre la base de données plus variée et plus fonctionnelle on ajoute là-dessus une autre base de données de bruit conçue spécialement  pour la détection des mots-clés. Lors de l'enregistrement des nouveaux mots, les données seront ajoutées directement à la base d'entraînement. Pour équilibrer les pourcentages de données entre la base d'entraînement et la base de test, on click sur >  `dashboard` --> `rebalacing data`
+
 Personnellement, j'ai collecté juste 5 min de data avec environ 1 min de chaque label :  noise, résistance, FPGA, microcontrôleur, transistor.
+
 ### 2-2- Paramétrer , entraîner et télècharger le modèle 
 Une fois, les données collectées, on passe au paramétrage dans la section Impulse design. Pour préparer le modèle, on ajoute: 
 - un bloc de traitement " a processing bloc" : J'ai choisi MFCC bloc qui est dédié à la parole humaine. 
@@ -57,7 +59,9 @@ Une fois, les données collectées, on passe au paramétrage dans la section Imp
 
 Après l'enregistrement de ces paramètres, on  vérifie le fonctionnement prévu du modèle sur la carte BLE sens autrement dit la rapidité d l'exécution du modèle sur la carte. On trouve ces informations dans la section de MFCC.
 Pour notre cas, le modèle va prendre 17 kb de la mémoire et va s'exécuter dans 177ms. Ceci est négligeable puisque la carte contient 256kb de RAM. Et même l'exécution est considérée rapide. Ces résultats varient selon la quantité des données.
-![](On-device performance.png)
+
+![](On-device_performance.png)
+
 On génère ensuite les features de notre base de données et on visualise la data en 3D pour vérifier que les données sont bien séparées ou bien s'il y a des problèmes à corriger.
 
 ![](problems.png)
