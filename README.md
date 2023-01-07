@@ -107,8 +107,6 @@ On a réussi alors à détecter les mots en clignotant la Led pour un mot partic
 - https://www.youtube.com/watch?v=ERoQiQhJ38U 
 - https://www.youtube.com/watch?v=muIe9IAI4-A
 - https://www.youtube.com/watch?v=FseGCn-oBA0&list=PL7VEa1KauMQp9bQdo2jLlJCdzprWkc7zC 
-- https://www.deviceplus.com/arduino/the-basics-of-arduino-adjusting-led-brightness/#:~:text=You%20can%20easily%20switch%20an,use%20the%20%E2%80%9CPWM%E2%80%9D%20output.
-- https://pijaeducation.com/arduino/how-to-take-output-from-arduino-uno/led-brightness-control-using-arduino/
 
 [df1]: https://content.arduino.cc/assets/Nano_BLE_Sense_mp34dt05-a.pdf?_gl=1*b34798*_ga*MTg0NTMwMTQ0NC4xNjcwNDMwOTEw*_ga_NEXN8H46L5*MTY3Mjk0MjIyOS45LjEuMTY3Mjk0NzQxMy4wLjAuMA..
 [df2]:https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/arduino-nano-33-ble-sense
